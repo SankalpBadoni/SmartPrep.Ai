@@ -21,7 +21,7 @@ const PricingSection = () => {
       },
       {
         title: "Educators",
-        price: "$399",
+        price: "$99",
         period: "Per year Per subject",
         popular: true,
         features: [
@@ -35,7 +35,7 @@ const PricingSection = () => {
       },
       {
         title: "Enterprises",
-        price: "$400",
+        price: "$119",
         period: "Per year",
         popular: false,
         features: [
@@ -65,8 +65,8 @@ const PricingSection = () => {
       },
       {
         title: "Educators",
-        price: "$39",
-        period: "Per month",
+        price: "$11",
+        period: "Per month Per subject",
         popular: true,
         features: [
           "Custom MCQ creation",
@@ -79,7 +79,7 @@ const PricingSection = () => {
       },
       {
         title: "Enterprises",
-        price: "$49",
+        price: "$21 ",
         period: "Per month",
         popular: false,
         features: [
