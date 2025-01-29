@@ -49,7 +49,7 @@ const Courses = () => {
                 <h2 className="text-2xl font-semibold text-white">{course.title}</h2>
                 <p className="mt-2 text-white">{course.description}</p>
                 <div className="flex justify-between items-center mt-4">
-                  <span className="text-lg font-bold text-blue-500">{course.price}</span>
+                  {/* <span className="text-lg font-bold text-blue-500">{course.price}</span> */}
                   <Link to={`/courses/${course.id}`} className="text-sm text-blue-500 hover:underline">
                     View Details
                   </Link>

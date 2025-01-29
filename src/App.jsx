@@ -9,6 +9,7 @@ import About from './Routes/About/About'
 import Courses from './Routes/Courses/Courses'
 import LeaderboardPage from './Routes/Leaderboard/Leaderboard'
 import Pricing from './Routes/Pricing/Pricing'
+import PricingSection from './Routes/Pricing/Pricing'
 
 function App() {
   const router = createBrowserRouter([
@@ -34,7 +35,7 @@ function App() {
         },
         {
           path: "/pricing",
-          element: <Pricing/>
+          element: <PricingSection/>
         },
       ]
     }
