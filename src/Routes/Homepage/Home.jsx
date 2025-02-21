@@ -20,6 +20,18 @@ const HomePage = () => {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       <header className="relative bg-gradient-to-br from-indigo-950 to-gray-800 py-16 px-6 text-center">
+      <motion.div 
+          className="absolute top-0 left-0 w-full h-full opacity-20"
+          animate={{
+            background: [
+              "radial-gradient(circle at 20% 20%, #3b82f6 0%, transparent 20%)", 
+              "radial-gradient(circle at 80% 80%, #312e81 0%, transparent 20%)", 
+              "radial-gradient(circle at 20% 80%, #4338ca 0%, transparent 20%)",
+              "radial-gradient(circle at 80% 20%, #4f46e5 0%, transparent 20%)"
+            ]
+          }}
+          transition={{ duration: 10, repeat: Infinity }}
+        />
       <h1 className="text-4xl md:text-6xl font-bold mb-4 relative z-10">
       {text.map((el, i) => (
         <motion.span
@@ -42,11 +54,11 @@ const HomePage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 0.8, // Longer duration for a more deliberate transition
-          delay: index * 0.1, // Delay each word slightly
-          ease: "easeInOut", // Use easeInOut for a smoother transition
+          duration: 0.8, 
+          delay: index * 0.1, 
+          ease: "easeInOut", 
         }}
-        style={{ display: "inline-block", marginRight: "0.5em" }} // Add margin between words
+        style={{ display: "inline-block", marginRight: "0.5em" }} 
       >
         {word}{" "}
       </motion.span>
@@ -57,7 +69,7 @@ const HomePage = () => {
           whileHover={{ scale: 1.1 }}
           className="bg-yellow-300 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-2xl transition-all cursor-pointer"
         >
-          <a href="http://127.0.0.1:5500/BottomBar/index.html" target="_blank" rel="noopener noreferrer" className="text-gray-900 font-semibold">
+          <a href="http://localhost:8501" target="_blank" rel="noopener noreferrer" className="text-gray-900 font-semibold">
         Get Started
       </a>
 
