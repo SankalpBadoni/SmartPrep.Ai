@@ -19,62 +19,67 @@ const HomePage = () => {
   const text = "Welcome to SmartPrep.Ai".split(" ");
   return (
     <div className="bg-gray-900 text-white min-h-screen">
-      <header className="relative bg-gradient-to-br from-indigo-950 to-gray-800 py-16 px-6 text-center">
+       <header className="relative bg-gradient-to-br from-indigo-950 to-gray-800 py-16 px-6 text-center overflow-hidden">
       <motion.div 
-          className="absolute top-0 left-0 w-full h-full opacity-20"
-          animate={{
-            background: [
-              "radial-gradient(circle at 20% 20%, #3b82f6 0%, transparent 20%)", 
-              "radial-gradient(circle at 80% 80%, #312e81 0%, transparent 20%)", 
-              "radial-gradient(circle at 20% 80%, #4338ca 0%, transparent 20%)",
-              "radial-gradient(circle at 80% 20%, #4f46e5 0%, transparent 20%)"
-            ]
-          }}
-          transition={{ duration: 10, repeat: Infinity }}
-        />
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 relative z-10">
-      {text.map((el, i) => (
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.4,
-            delay: i / 2,
-          }}
-          key={i}
-        >
-          {el}{" "}
-        </motion.span>
-      ))}
-    </h1>
-    <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">
-    {paragraphText.split(" ").map((word, index) => (
-      <motion.span
-        key={word + index} 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.8, 
-          delay: index * 0.1, 
-          ease: "easeInOut", 
+        className="absolute top-0 left-0 w-full h-full opacity-20"
+        animate={{
+          background: [
+            "radial-gradient(circle at 20% 20%, #3b82f6 0%, transparent 20%)", 
+            "radial-gradient(circle at 80% 80%, #312e81 0%, transparent 20%)", 
+            "radial-gradient(circle at 20% 80%, #4338ca 0%, transparent 20%)",
+            "radial-gradient(circle at 80% 20%, #4f46e5 0%, transparent 20%)"
+          ]
         }}
-        style={{ display: "inline-block", marginRight: "0.5em" }} 
-      >
-        {word}{" "}
-      </motion.span>
-    ))}
-  </p>
-        <motion.button
+        transition={{ duration: 10, repeat: Infinity }}
+        style={{ zIndex: 1 }}
+      />
+      
+      <div className="relative z-10 flex flex-col items-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          {text.map((el, i) => (
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.4,
+                delay: i / 2,
+              }}
+              key={i}
+            >
+              {el}{" "}
+            </motion.span>
+          ))}
+        </h1>
         
-          whileHover={{ scale: 1.1 }}
-          className="bg-yellow-300 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-2xl transition-all cursor-pointer"
-        >
-          <a href="http://localhost:8501" target="_blank" rel="noopener noreferrer" className="text-gray-900 font-semibold">
-        Get Started
-      </a>
+        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">
+          {paragraphText.split(" ").map((word, index) => (
+            <motion.span
+              key={word + index} 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8, 
+                delay: index * 0.1, 
+                ease: "easeInOut", 
+              }}
+              style={{ display: "inline-block", marginRight: "0.5em" }} 
+            >
+              {word}
+            </motion.span>
+          ))}
+        </p>
 
-        </motion.button>
-      </header>
+        <motion.a 
+          href="http://localhost:8501" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.1 }}
+          className="inline-block bg-yellow-300 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-2xl transition-all cursor-pointer no-underline"
+        >
+          Get Started
+        </motion.a>
+      </div>
+    </header>
 
       <section className="py-16 px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
